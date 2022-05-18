@@ -54,8 +54,7 @@ router.post("/login", (req, res) => {
   }
 }).then(foundUser=>{
     if(!foundUser){
-      console.log(err);
-      return res.status(400).json({msg:"abc"})
+    return res.status(400).json({msg:"abc"})
     }
     if(bcrypt.compareSync(req.body.password,foundUser.password)){
       req.session.user = {
