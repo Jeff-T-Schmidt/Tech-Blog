@@ -34,6 +34,7 @@ router.post("/", (req, res) => {
   Blog.create({
     title:req.body.title,
     body:req.body.body,
+    // createdAt: req.body.createdAt,
     UserId:req.session.user.id
   })
     .then(newBlog => {
@@ -62,6 +63,7 @@ router.put("/:id", (req, res) => {
 
 //delete a Blog
 router.delete("/:id", (req, res) => {
+  console.log(req.params.id)
   Blog.destroy({
     where: {
       id: req.params.id
