@@ -3,7 +3,7 @@ const router = express.Router();
 const {User,Blog, Comment} = require('../models');
 
 router.get("/",(req,res)=>{
-    Blog.findAll({include:[Comment]
+    Blog.findAll({include:[{model: Comment, include: User}]
     }).then(blogs=>{
         const hbsBlogs = blogs.map(blog=>blog.get({plain:true}))
         console.log("==========")

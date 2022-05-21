@@ -1,7 +1,17 @@
 <h1>Home page</h1>
 {{#each blogs}}
+    {{log Comments}}
     <h3>{{title}}</h3>
+    <h4>Created on: {{createdAt}}</h4>
     <p>{{body}}</p>
-    <p>{{Comments}}</p>
+    <button id="reply" data-replyId ={{id}}>reply</button> 
+    {{#if Comments}}
+    {{#each Comments}}
+    <p></p>
+    <p>{{body}}</p>
+    {{/each}}
+    {{/if}}
     <hr>
 {{/each}}
+
+<script src="/js/reply.js"></script>

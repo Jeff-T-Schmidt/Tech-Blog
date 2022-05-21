@@ -6,7 +6,7 @@ document.querySelectorAll("#reply").forEach((element)=>{
             method:"PUT",
         }).then(res=>{
             if(res.ok){
-               location.reload()
+                location.href="/profile"
             } else {
                 alert("trumpet sound")
             }
